@@ -22,11 +22,15 @@ if(!user)
 
     return (<div>
      <h1>User Details</h1>
-<p>Name: {user.name}</p>
-  <p>Username:{user.username}</p>
-  <p>Email: {user.email}</p>
-  <p>Phone: {user.phone}</p>
-  <p>Website: {user.website}</p>
+<p>Name: {user.name}
+    <br/>
+  Username:{user.username}
+  <br/>
+  Email: {user.email}
+  <br/>
+  Phone: {user.phone}
+  <br/>
+  Website: {user.website}</p>
   
     </div>)
 }
