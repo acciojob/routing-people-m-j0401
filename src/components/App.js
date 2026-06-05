@@ -16,12 +16,12 @@ const App = () => {
   
       },[])
 
-        if (!data) {
-    return <div>Loading...</div>;
-  }
+       
 
   return (
     <div>
+      { !data && <div>Loading...</div>}
+    
       <Routes>
         <Route path="/" element={<UserList data={data}/>}/>
         <Route path="/users/:id" element={<UserDetails data={data}/>}/>
