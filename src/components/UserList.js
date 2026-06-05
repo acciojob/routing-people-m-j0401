@@ -3,14 +3,13 @@ import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 
 const UserList=({data})=>{
-     if(!data)
-    {
-        return <div>Loading....</div>
-    }
+   
 
     
 
     return (<div>
+
+      {  !data &&  <div>Loading... </div>   }
       
 
       
