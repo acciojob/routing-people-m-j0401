@@ -1,26 +1,34 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
 
 
 const UserDetails=({data})=>{
-
+ let[user,setUser]=useState(null)
     let {id}=useParams();
+    
 
-   
+  useEffect(()=>{
+let ide=setTimeout(()=>{
+    let dt=data.find((dta)=> dta.id==Number(id))
+    setUser(dt)
+},1000)
+  
+  return (()=> clearTimeout(ide))
 
-let user=data.find((dta)=> dta.id==Number(id))
+},[setUser])
+
 
 if(!user)
 {
-    return<div>User not Found!</div>
+    return<div>Loading...</div>
 }
 
     return (<div>
 
-   {  !data &&  <div>Loading... </div>   }
-   
+  
+{user &&  <div>
      <h1>User Details</h1>
 <p>Name: {user.name}
     <br/>
@@ -31,7 +39,8 @@ if(!user)
   Phone: {user.phone}
   <br/>
   Website: {user.website}</p>
-  
+  </div>
+}
     </div>)
 }
 
